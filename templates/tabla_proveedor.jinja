@@ -1,0 +1,44 @@
+{% extends 'home.jinja' %}
+
+{% block content %}
+    <h1> Lista de Proveedores </h1>
+
+    <table>
+
+        <thead>
+
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>DNI</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>  
+            {% for proveedor in proveedores %}
+            <tr>
+                <td>{{ proveedor.nombre }}</td>
+                <td>{{ proveedor.apellido }}</th>
+                <td>{{ proveedor.dni }}</td>
+            </tr>
+            {% endfor %}
+        
+        
+        </tbody>
+
+    </table>
+
+    <br>
+    <br>
+
+    <a href="{{ '/compras/proveedor/' }}">Ir a Agregar un Proveedor</a>
+
+
+    <br>
+    <br>
+
+    <a href="{{ '/compras/templates/create_producto' }}">Ir a Productos</a>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'home.jinja' %}
+
+{% block content %}
+    <div>
+
+        <h1>Agregar un Proveedor</h1>
+
+        <prov_form action="" method="post">
+                
+            <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+        
+            {{ prov_form.as_p() }}
+
+            <br>
+            <br>
+
+            <button type="submit" class="button">Crear proveedor</button>
+                
+        </prov_form>
+
+        <br>
+        <br>
+
+        <a href="{{ '/compras/' }}">Ir a Lista de Proveedores</a>
+
+    </div>
+
+{% endblock %}
